@@ -1,6 +1,406 @@
+/* Custom Properties
+ * Define reusable values as CSS variables
+ * ========================================================================== */
+:root {
+  --primary-red: #e11939;
+  --text-dark: #202020;
+  --text-light: #666;
+  --background-light: #f5f5f5;
+  --white: #fff;
+  --spacing-base: 1rem;
+  --container-padding: 1rem;
+}
+
+/* Base Styles
+ * Applied to all screen sizes
+ * ========================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 350;
+  font-style: normal;
+  line-height: 1.6;
+  color: var(--text-dark);
+  background-color: var(--background-light);
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Layout & Container
+ * Mobile-first container width
+ * ========================================================================== */
+.container {
+  width: 100%;
+  padding: 0 var(--container-padding);
+  margin: 0 auto;
+}
+
+/* Header & Navigation
+   * Mobile-first: Stack navigation items vertically
+   * ========================================================================== */
+.header {
+  background-color: var(--white);
+  border-bottom: 1px solid #ddd;
+  padding: var(--spacing-base) 0;
+}
+
+.top-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--spacing-base);
+}
+
+.logo {
+  color: var(--primary-red);
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-menu {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-menu a {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+/* News Grid
+   * Mobile: Single column layout
+   * ========================================================================== */
+.featured-news {
+  margin: var(--spacing-base) 0;
+}
+
+.main-story {
+  position: relative;
+  margin-bottom: var(--spacing-base);
+}
+
+.story-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: var(--spacing-base);
+  background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+  color: var(--white);
+}
+
+.news-grid {
+  display: grid;
+  gap: var(--spacing-base);
+}
+
+.news-card {
+  background: var(--white);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.news-content {
+  padding: var(--spacing-base);
+}
+
+.news-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.news-excerpt {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+/* Tablet Styles (768px and up)
+   * ========================================================================== */
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+
+  .top-nav {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .nav-menu {
+    flex-direction: row;
+    gap: 1.5rem;
+  }
+
+  .featured-news {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: var(--spacing-base);
+  }
+
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Desktop Styles (1024px and up)
+   * ========================================================================== */
+@media (min-width: 1024px) {
+  .container {
+    max-width: 960px;
+  }
+
+  .news-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .logo {
+    font-size: 2rem;
+  }
+
+  .nav-menu a {
+    font-size: 1rem;
+  }
+}
+
+/* Large Desktop Styles (1200px and up)
+   * ========================================================================== */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+
+  .story-overlay {
+    padding: calc(var(--spacing-base) * 2);
+  }
+}
+
+/* Modern CSS Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 /* Mobile Viwe First  */
 
 .video-gallery {
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  width: 100%;
+  padding: 20px 0;
+  gap: 20px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.video-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.video-thumbnail {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.youtube-container {
+  width: 100%;
+  max-width: 315px;
+  height: 177px;
+}
+
+.gallery-container {
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 50%;
+  z-index: 100;
+  transition: background 0.3s;
+}
+
+.nav-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
+.prev-btn {
+  left: 0;
+}
+
+.next-btn {
+  right: 0;
+}
+
+/* Tablet View - 3 thumbnails */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .gallery-container {
+    position: relative;
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .video-gallery {
+    display: flex;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    width: 100%;
+    padding: 20px 0;
+    gap: 20px;
+  }
+
+  .video-thumbnail {
+    flex: 0 0 calc(33.333% - 14px);
+    scroll-snap-align: start;
+    position: relative;
+  }
+
+  .youtube-container {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+  }
+
+  .youtube-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .nav-btn {
+    padding: 15px 20px;
+    font-size: 20px;
+  }
+
+  .prev-btn {
+    left: 0;
+  }
+
+  .next-btn {
+    right: 0;
+  }
+}
+
+/* Laptop/Desktop view - original layout */
+@media screen and (min-width: 1024px) {
+  .gallery-container {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .video-gallery {
+    display: flex;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    width: 100%;
+    padding: 20px 0;
+  }
+
+  .video-thumbnail {
+    flex: 0 0 auto;
+    margin-right: 20px;
+  }
+
+  .youtube-container {
+    width: 315px;
+    height: 315px;
+  }
+
+  .nav-btn {
+    padding: 15px 20px;
+    font-size: 20px;
+  }
+
+  .prev-btn {
+    left: -50px;
+  }
+
+  .next-btn {
+    right: -50px;
+  }
+}
+
+/* Make video thumbnail position relative for overlay */
+.video-thumbnail {
+  position: relative;
+  cursor: pointer;
+}
+
+/* Create dark overlay on hover */
+.video-thumbnail::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none; /* Makes sure the overlay doesn't interfere with clicks */
+}
+
+/* Show overlay on hover */
+.video-thumbnail:hover::after {
+  opacity: 1;
+}
+
+/* Hide video player (title and play button) */
+.video-player {
+  display: none;
+}
+
+/* Mobile view - centered thumbnails with 16:9 ratio */
+@media screen and (max-width: 767px) {
+  .gallery-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+  }
+
+  .video-gallery {
     display: flex;
     overflow-x: hidden;
     overflow-y: hidden;
@@ -8,266 +408,206 @@
     scroll-behavior: smooth;
     width: 100%;
     padding: 20px 0;
-    gap: 20px;
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-}
+    gap: 0; /* Remove gap for better centering */
+  }
 
-.video-gallery::-webkit-scrollbar {
-    display: none;
-}
-
-.video-thumbnail {
+  .video-thumbnail {
     flex: 0 0 100%;
     scroll-snap-align: center;
-    position: relative;
     display: flex;
     justify-content: center;
-    cursor: pointer;
-}
-
-.youtube-container {
+    align-items: center;
     width: 100%;
-    max-width: 315px;
-    height: 177px;
-}
+  }
 
-.gallery-container {
-    position: relative;
-    width: 90%;
+  .youtube-container {
+    width: 85vw; /* Use 85% of viewport width */
+    height: 47.8125vw; /* 16:9 ratio (85vw * 9/16) */
     margin: 0 auto;
-}
-
-.nav-btn {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 16px;
-    border-radius: 50%;
-    z-index: 100;
-    transition: background 0.3s;
-}
-
-.nav-btn:hover {
-    background: rgba(0, 0, 0, 0.8);
-}
-
-.prev-btn {
-    left: 0;
-}
-
-.next-btn {
-    right: 0;
-}
-
-/* Tablet View - 3 thumbnails */
-@media screen and (min-width: 768px) and (max-width: 1023px) {
-    .gallery-container {
-        position: relative;
-        width: 95%;
-        margin: 0 auto;
-    }
-
-    .video-gallery {
-        display: flex;
-        overflow-x: hidden;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-        width: 100%;
-        padding: 20px 0;
-        gap: 20px;
-    }
-      
-    .video-thumbnail {
-        flex: 0 0 calc(33.333% - 14px);
-        scroll-snap-align: start;
-        position: relative;
-    }
-      
-    .youtube-container {
-        width: 100%;
-        height: 0;
-        padding-bottom: 100%;
-        position: relative;
-    }
-
-    .youtube-container iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-    }
-
-    .nav-btn {
-        padding: 15px 20px;
-        font-size: 20px;
-    }
-
-    .prev-btn {
-        left: 0;
-    }
-
-    .next-btn {
-        right: 0;
-    }
-}
-
-/* Laptop/Desktop view - original layout */
-@media screen and (min-width: 1024px) {
-    .gallery-container {
-        position: relative;
-        width: 90%;
-        margin: 0 auto;
-    }
-
-    .video-gallery {
-        display: flex;
-        overflow-x: hidden;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-        width: 100%;
-        padding: 20px 0;
-    }
-
-    .video-thumbnail {
-        flex: 0 0 auto;
-        margin-right: 20px;
-    }
-
-    .youtube-container {
-        width: 315px;
-        height: 315px;
-    }
-
-    .nav-btn {
-        padding: 15px 20px;
-        font-size: 20px;
-    }
-
-    .prev-btn {
-        left: -50px;
-    }
-
-    .next-btn {
-        right: -50px;
-    }
-}
-
-/* Make video thumbnail position relative for overlay */
-.video-thumbnail {
     position: relative;
-    cursor: pointer;
-}
+  }
 
-/* Create dark overlay on hover */
-.video-thumbnail::after {
-    content: '';
+  .youtube-container iframe {
+    width: 100%;
+    height: 100%;
     position: absolute;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5); /* Dark overlay */
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none; /* Makes sure the overlay doesn't interfere with clicks */
-}
+  }
 
-/* Show overlay on hover */
-.video-thumbnail:hover::after {
-    opacity: 1;
-}
+  .nav-btn {
+    z-index: 100;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 
-/* Hide video player (title and play button) */
-.video-player {
-    display: none;
-}
+  .prev-btn {
+    left: 10px;
+  }
 
-/* Mobile view - centered thumbnails with 16:9 ratio */
-@media screen and (max-width: 767px) {
-    .gallery-container {
-        width: 100%;
-        margin: 0 auto;
-        padding: 0;
-        position: relative;
-    }
-
-    .video-gallery {
-        display: flex;
-        overflow-x: hidden;
-        overflow-y: hidden;
-        scroll-snap-type: x mandatory;
-        scroll-behavior: smooth;
-        width: 100%;
-        padding: 20px 0;
-        gap: 0; /* Remove gap for better centering */
-    }
-
-    .video-thumbnail {
-        flex: 0 0 100%;
-        scroll-snap-align: center;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 100%;
-    }
-
-    .youtube-container {
-        width: 85vw; /* Use 85% of viewport width */
-        height: 47.8125vw; /* 16:9 ratio (85vw * 9/16) */
-        margin: 0 auto;
-        position: relative;
-    }
-
-    .youtube-container iframe {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
-    }
-
-    .nav-btn {
-        z-index: 100;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-    }
-
-    .prev-btn {
-        left: 10px;
-    }
-
-    .next-btn {
-        right: 10px;
-    }
+  .next-btn {
+    right: 10px;
+  }
 }
 
 /* Add section styling */
 .video-section {
-    background-color: #1a1a1a; /* Dark grey background */
-    padding: 10px 0;
-    position: relative;
+  background-color: #1a1a1a; /* Dark grey background */
+  padding: 10px 0;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  position: relative;
 }
 
 /* Title styling */
 .section-title {
-    color: white;
-    font-size: 24px;
-    font-weight: bold;
-    margin-top: 0;
-    padding: 0 0 0px 5%;
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 0;
+  padding: 0 0 0px 5%;
 }
 
 /* Update gallery container to work with new section */
 .gallery-container {
-    position: relative;
-    width: 90%;
-    margin: 0 auto;
+  position: relative;
+  width: 90%;
+  margin: 0 auto;
+}
+
+/* Footer styles */
+.footer {
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  color: #ffffff;
+  padding: 2rem 1rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-section h3 {
+  color: #ffffff;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.footer-section h3::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 2px;
+  background: #ff6b6b;
+  animation: grow 1s ease forwards;
+}
+
+.footer-section p {
+  color: #cccccc;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.social-links {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  text-decoration: none;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.social-link:hover {
+  transform: translateY(-3px);
+  background: #ff6b6b;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  color: #888888;
+}
+
+/* Floating dots animation */
+.dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.dot:nth-child(1) {
+  top: 20%;
+  left: 20%;
+  animation: float 8s infinite;
+}
+
+.dot:nth-child(2) {
+  top: 60%;
+  left: 80%;
+  animation: float 10s infinite;
+}
+
+.dot:nth-child(3) {
+  top: 40%;
+  left: 40%;
+  animation: float 6s infinite;
+}
+
+/* Animations */
+@keyframes float {
+  0%,
+  100% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(-20px, 20px);
+  }
+  50% {
+    transform: translate(20px, -20px);
+  }
+  75% {
+    transform: translate(20px, 20px);
+  }
+}
+
+@keyframes grow {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
+}
+
+/* Media query for larger screens */
+@media (min-width: 768px) {
+  .footer-content {
+    grid-template-columns: repeat(3, 1fr);
+  }
 }

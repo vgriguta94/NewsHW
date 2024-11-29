@@ -1,71 +1,330 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Quicksand:wght@350&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
+    <!-- NAVBAR BEGIN  -->
+    <header class="header">
+      <div class="container">
+        <nav class="top-nav">
+          <!-- Logo IMG here -->
+          <a href="/" class="logo">LOGO</a>
+          <!-- Menu Here  -->
+          <ul class="nav-menu">
+            <li><a href="#">MENU 1 </a></li>
+            <li><a href="#">MENU 2</a></li>
+            <li><a href="#">MENU 3</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <!-- NAVBAR END  -->
 
-    <section class="video-section">
+    <!-- MAIN CONTENT BEGIN  -->
+    <main class="container">
+      <!-- Featured News (2) Begin-->
+      <section class="featured-news">
+        <div class="main-story">
+          <img src="https://placehold.co/800x400" alt="AI" />
+          <div class="story-overlay">
+            <h2>AI-Powered Coding Assistants Reach New Milestone</h2>
+            <p>20 hours ago | 3:44</p>
+          </div>
+        </div>
+        <div class="news-card">
+          <div class="news-content">
+            <h3 class="news-title">
+              JavaScript Framework Wars: React vs. Svelte
+            </h3>
+            <p class="news-excerpt">
+              React and Svelte continue to dominate discussions among developers
+              in 2024. React retains its popularity for large-scale apps, while
+              Svelte’s simplicity and speed are attracting new adopters.
+            </p>
+          </div>
+        </div>
+      </section>
+      <!-- End Featured News Ends-->
+
+      <!-- Article News Begin-->
+      <section class="news-grid">
+        <article class="news-card">
+          <img src="https://placehold.co/400x200" alt="CSS Modules" />
+          <div class="news-content">
+            <h3 class="news-title">
+              CSS Modules Revolutionize Component Styling
+            </h3>
+            <p class="news-excerpt">
+              CSS Modules grow in adoption as developers seek to encapsulate
+              styles for components. This technique eliminates style clashes and
+              improves maintainability in large-scale projects.
+            </p>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <img src="https://placehold.co/400x200" alt="HTML 6" />
+          <div class="news-content">
+            <h3 class="news-title">
+              HTML 6 Draft Proposal Promises Smarter Forms
+            </h3>
+            <p class="news-excerpt">
+              New input types and validation improvements are in the works for
+              HTML 6. Developers are excited about features like enhanced date
+              pickers and built-in multi-step form support
+            </p>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <img src="https://placehold.co/400x200" alt="C# Records" />
+          <div class="news-content">
+            <h3 class="news-title">
+              C# Introduces Records for Immutable Objects
+            </h3>
+            <p class="news-excerpt">
+              C#’s recent updates bring immutable records, making data
+              manipulation safer and more intuitive. This feature simplifies
+              working with immutable objects, reducing bugs in applications.
+            </p>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <img src="https://placehold.co/400x200" alt="AI-Powered Debugging" />
+          <div class="news-content">
+            <h3 class="news-title">AI-Powered Debugging Tools Are Here</h3>
+            <p class="news-excerpt">
+              AI-driven debugging tools now detect and fix bugs in real-time.
+              These tools analyze code behavior, suggest fixes, and even rewrite
+              problematic lines, revolutionizing debugging processes.
+            </p>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <img src="https://placehold.co/400x200" alt="JS Animation API" />
+          <div class="news-content">
+            <h3 class="news-title">
+              JavaScript’s New Native Animation API Simplifies Motion Design
+            </h3>
+            <p class="news-excerpt">
+              The Web Animations API gains traction as developers move away from
+              third-party libraries. It offers a lightweight and performant way
+              to create animations directly in the browser.
+            </p>
+          </div>
+        </article>
+
+        <article class="news-card">
+          <img src="https://placehold.co/400x200" alt="C# 12" />
+          <div class="news-content">
+            <h3 class="news-title">
+              C# 12 Introduces Default Interface Methods
+            </h3>
+            <p class="news-excerpt">
+              C# developers gain flexibility with default implementations in
+              interfaces. This update allows developers to extend APIs without
+              breaking existing implementations.
+            </p>
+          </div>
+        </article>
+      </section>
+      <!-- Article News End  -->
+
+      <!-- Video Section Begin -->
+      <section class="video-section">
         <h2 class="section-title">Top Videos</h2>
         <div class="gallery-container">
-            <button class="nav-btn prev-btn">&lt;</button>
-            <div class="video-gallery">
-                <div class="video-thumbnail">
-                    <div class="youtube-container">
-                        <iframe width="315" height="315" src="https://www.youtube.com/embed/pCvZtjoRq1I?enablejsapi=1" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="video-thumbnail">
-                    <div class="youtube-container">
-                        <iframe width="315" height="315" src="https://www.youtube.com/embed/8dWL3wF_OMw?enablejsapi=1&autoplay=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div> <div class="video-thumbnail">
-                    <div class="youtube-container">
-                        <iframe width="315" height="315" src="https://www.youtube.com/embed/GlGpSQsS8uc?enablejsapi=1&autoplay=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="video-thumbnail">
-                    <div class="youtube-container">
-                        <iframe width="315" height="315" src="https://www.youtube.com/embed/CgkZ7MvWUAA?enablejsapi=1&autoplay=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="video-thumbnail">
-                    <div class="youtube-container">
-                        <iframe width="315" height="315" src="https://www.youtube.com/embed/R9OHn5ZF4Uo?enablejsapi=1&autoplay=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="video-thumbnail">
-                    <div class="youtube-container">
-                        <iframe width="315" height="315" src="https://www.youtube.com/embed/HD13eq_Pmp8?enablejsapi=1&autoplay=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="video-thumbnail">
-                    <div class="youtube-container">
-                        <iframe width="315" height="315" src="https://www.youtube.com/embed/kVgy1GSDHG8?enablejsapi=1&autoplay=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="video-thumbnail">
-                    <div class="youtube-container">
-                        <iframe width="315" height="315" src="https://www.youtube.com/embed/hn80mWvP-9g?enablejsapi=1&autoplay=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="video-thumbnail">
-                    <div class="youtube-container">
-                        <iframe width="315" height="315" src="https://www.youtube.com/embed/f3uCSh6LIY0?enablejsapi=1&autoplay=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="video-thumbnail">
-                    <div class="youtube-container">
-                        <iframe width="315" height="315" src="https://www.youtube.com/embed/gOMW_n2-2Mw?enablejsapi=1&autoplay=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                    </div>
-                </div>
+          <button class="nav-btn prev-btn">&lt;</button>
+          <div class="video-gallery">
+            <div class="video-thumbnail">
+              <div class="youtube-container">
+                <iframe
+                  width="315"
+                  height="315"
+                  src="https://www.youtube.com/embed/pCvZtjoRq1I?enablejsapi=1"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
             </div>
-            <button class="nav-btn next-btn">&gt;</button>
+            <div class="video-thumbnail">
+              <div class="youtube-container">
+                <iframe
+                  width="315"
+                  height="315"
+                  src="https://www.youtube.com/embed/8dWL3wF_OMw?enablejsapi=1&autoplay=0"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <div class="video-thumbnail">
+              <div class="youtube-container">
+                <iframe
+                  width="315"
+                  height="315"
+                  src="https://www.youtube.com/embed/GlGpSQsS8uc?enablejsapi=1&autoplay=0"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <div class="video-thumbnail">
+              <div class="youtube-container">
+                <iframe
+                  width="315"
+                  height="315"
+                  src="https://www.youtube.com/embed/CgkZ7MvWUAA?enablejsapi=1&autoplay=0"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <div class="video-thumbnail">
+              <div class="youtube-container">
+                <iframe
+                  width="315"
+                  height="315"
+                  src="https://www.youtube.com/embed/R9OHn5ZF4Uo?enablejsapi=1&autoplay=0"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <div class="video-thumbnail">
+              <div class="youtube-container">
+                <iframe
+                  width="315"
+                  height="315"
+                  src="https://www.youtube.com/embed/HD13eq_Pmp8?enablejsapi=1&autoplay=0"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <div class="video-thumbnail">
+              <div class="youtube-container">
+                <iframe
+                  width="315"
+                  height="315"
+                  src="https://www.youtube.com/embed/kVgy1GSDHG8?enablejsapi=1&autoplay=0"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <div class="video-thumbnail">
+              <div class="youtube-container">
+                <iframe
+                  width="315"
+                  height="315"
+                  src="https://www.youtube.com/embed/hn80mWvP-9g?enablejsapi=1&autoplay=0"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <div class="video-thumbnail">
+              <div class="youtube-container">
+                <iframe
+                  width="315"
+                  height="315"
+                  src="https://www.youtube.com/embed/f3uCSh6LIY0?enablejsapi=1&autoplay=0"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+            <div class="video-thumbnail">
+              <div class="youtube-container">
+                <iframe
+                  width="315"
+                  height="315"
+                  src="https://www.youtube.com/embed/gOMW_n2-2Mw?enablejsapi=1&autoplay=0"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                  allowfullscreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+          <button class="nav-btn next-btn">&gt;</button>
         </div>
-    </section>
+      </section>
+      <!-- Video Section End -->
+    </main>
+    <!-- MAIN CONTENT END  -->
+
+    <!-- Footer Begin -->
+    <footer class="footer">
+      <!-- Animated background dots -->
+      <div class="dot"></div>
+      <div class="dot"></div>
+      <div class="dot"></div>
+
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>About Us</h3>
+          <p>
+            We are passionate about creating amazing web experiences. Our team
+            works tirelessly to bring you the best solutions.
+          </p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Contact</h3>
+          <p>Email: info@example.com</p>
+          <p>Phone: (555) 123-4567</p>
+          <p>Address: 555 Seymour St, Vancouver, BC V6B 3H6</p>
+        </div>
+
+        <div class="footer-section">
+          <h3>Follow Us</h3>
+          <div class="social-links">
+            <a href="#" class="social-link"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+            <a href="#" class="social-link"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+            <a href="#" class="social-link"
+              ><i class="fa-brands fa-youtube"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2024 FVE. All rights reserved.</p>
+      </div>
+    </footer>
+    <!-- Footer End -->
+
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

@@ -246,20 +246,38 @@ img {
 /* ==========================================================================
       Video Gallery
       ========================================================================== */
-.video-section {
-  background-color: #1a1a1a; /* Dark grey background */
-  padding: 10px 0;
-  margin-top: 5%;
-  margin-bottom: 5%;
-  position: relative;
+/* Mobile Viwe First  */
+
+.video-gallery {
+  display: flex;
+  overflow-x: hidden;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  width: 100%;
+  padding: 20px 0;
+  gap: 20px;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-.section-title {
-  color: var(--white);
-  font-size: 1.5rem;
-  font-weight: bold;
-  padding: 0 5%;
-  margin-bottom: var(--spacing-sm);
+.video-gallery::-webkit-scrollbar {
+  display: none;
+}
+
+.video-thumbnail {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.youtube-container {
+  width: 100%;
+  max-width: 315px;
+  height: 177px;
 }
 
 .gallery-container {
@@ -267,32 +285,128 @@ img {
   width: 90%;
   margin: 0 auto;
 }
-.video-gallery {
-  display: flex;
-  overflow-x: hidden;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  width: 100%;
-  padding: 20px 0;
-}
-.video-thumbnail {
-  flex: 0 0 auto;
-  margin-right: 20px;
-}
-.youtube-container {
-  width: 315px;
-  height: 315px;
-}
+
 .nav-btn {
-  padding: 15px 20px;
-  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 50%;
+  z-index: 100;
+  transition: background 0.3s;
 }
+
+.nav-btn:hover {
+  background: rgba(0, 0, 0, 0.8);
+}
+
 .prev-btn {
-  left: -50px;
+  left: 0;
 }
+
 .next-btn {
-  right: -50px;
+  right: 0;
 }
+
+/* Tablet View - 3 thumbnails */
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .gallery-container {
+    position: relative;
+    width: 95%;
+    margin: 0 auto;
+  }
+
+  .video-gallery {
+    display: flex;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    width: 100%;
+    padding: 20px 0;
+    gap: 20px;
+  }
+
+  .video-thumbnail {
+    flex: 0 0 calc(33.333% - 14px);
+    scroll-snap-align: start;
+    position: relative;
+  }
+
+  .youtube-container {
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    position: relative;
+  }
+
+  .youtube-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .nav-btn {
+    padding: 15px 20px;
+    font-size: 20px;
+  }
+
+  .prev-btn {
+    left: 0;
+  }
+
+  .next-btn {
+    right: 0;
+  }
+}
+
+/* Laptop/Desktop view - original layout */
+@media screen and (min-width: 1024px) {
+  .gallery-container {
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .video-gallery {
+    display: flex;
+    overflow-x: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    width: 100%;
+    padding: 20px 0;
+  }
+
+  .video-thumbnail {
+    flex: 0 0 auto;
+    margin-right: 20px;
+  }
+
+  .youtube-container {
+    width: 315px;
+    height: 315px;
+  }
+
+  .nav-btn {
+    padding: 15px 20px;
+    font-size: 20px;
+  }
+
+  .prev-btn {
+    left: -50px;
+  }
+
+  .next-btn {
+    right: -50px;
+  }
+}
+
 /* Make video thumbnail position relative for overlay */
 .video-thumbnail {
   position: relative;
@@ -322,6 +436,67 @@ img {
 .video-player {
   display: none;
 }
+
+/* Mobile view - centered thumbnails with 16:9 ratio */
+@media screen and (max-width: 767px) {
+  .gallery-container {
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    position: relative;
+  }
+
+  .video-gallery {
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    width: 100%;
+    padding: 20px 0;
+    gap: 0; /* Remove gap for better centering */
+  }
+
+  .video-thumbnail {
+    flex: 0 0 100%;
+    scroll-snap-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+
+  .youtube-container {
+    width: 85vw; /* Use 85% of viewport width */
+    height: 47.8125vw; /* 16:9 ratio (85vw * 9/16) */
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .youtube-container iframe {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+
+  .nav-btn {
+    z-index: 100;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .prev-btn {
+    left: 10px;
+  }
+
+  .next-btn {
+    right: 10px;
+  }
+}
+
 /* Add section styling */
 .video-section {
   background-color: #1a1a1a; /* Dark grey background */
@@ -343,57 +518,6 @@ img {
   position: relative;
   width: 90%;
   margin: 0 auto;
-}
-@media screen and (max-width: 767px) {
-  .gallery-container {
-    width: 100%;
-    margin: 0 auto;
-    padding: 0;
-    position: relative;
-  }
-  .video-gallery {
-    display: flex;
-    overflow-x: hidden;
-    overflow-y: hidden;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
-    width: 100%;
-    padding: 20px 0;
-    gap: 0; /* Remove gap for better centering */
-  }
-  .video-thumbnail {
-    flex: 0 0 100%;
-    scroll-snap-align: center;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  .youtube-container {
-    width: 85vw; /* Use 85% of viewport width */
-    height: 47.8125vw; /* 16:9 ratio (85vw * 9/16) */
-    margin: 0 auto;
-    position: relative;
-  }
-  .youtube-container iframe {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 0;
-  }
-  .nav-btn {
-    z-index: 100;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  .prev-btn {
-    left: 10px;
-  }
-  .next-btn {
-    right: 10px;
-  }
 }
 
 /* ==========================================================================
@@ -440,27 +564,29 @@ img {
       Footer
       ========================================================================== */
 .footer {
-  background: var(--dark-gradient);
-  color: var(--white);
-  padding: var(--spacing-xl) var(--spacing-sm);
+  background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+  color: #ffffff;
+  padding: 2rem 1rem;
   position: relative;
   overflow: hidden;
 }
 
 .footer-content {
-  max-width: var(--container-width-lg);
+  max-width: 1200px;
   margin: 0 auto;
   display: grid;
-  gap: var(--spacing-lg);
+  grid-template-columns: 1fr;
+  gap: 2rem;
   position: relative;
   z-index: 1;
 }
 
 .footer-section h3 {
+  color: #ffffff;
   font-size: 1.2rem;
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: 1rem;
   position: relative;
-  padding-bottom: var(--spacing-xs);
+  padding-bottom: 0.5rem;
 }
 
 .footer-section h3::after {
@@ -471,19 +597,19 @@ img {
   width: 50px;
   height: 2px;
   background: #ff6b6b;
-  transform-origin: left;
   animation: grow 1s ease forwards;
 }
 
 .footer-section p {
-  color: #ccc;
-  margin-bottom: var(--spacing-xs);
+  color: #cccccc;
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
 }
 
 .social-links {
   display: flex;
-  gap: var(--spacing-sm);
-  margin-top: var(--spacing-sm);
+  gap: 1rem;
+  margin-top: 1rem;
 }
 
 .social-link {
@@ -494,10 +620,9 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--white);
+  color: #ffffff;
   text-decoration: none;
-  transition: transform var(--transition-base),
-    background-color var(--transition-base);
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 .social-link:hover {
@@ -507,10 +632,37 @@ img {
 
 .footer-bottom {
   text-align: center;
-  margin-top: var(--spacing-lg);
-  padding-top: var(--spacing-sm);
+  margin-top: 2rem;
+  padding-top: 1rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: #888;
+  color: #888888;
+}
+
+/* Floating dots animation */
+.dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.dot:nth-child(1) {
+  top: 20%;
+  left: 20%;
+  animation: float 8s infinite;
+}
+
+.dot:nth-child(2) {
+  top: 60%;
+  left: 80%;
+  animation: float 10s infinite;
+}
+
+.dot:nth-child(3) {
+  top: 40%;
+  left: 40%;
+  animation: float 6s infinite;
 }
 
 /* Animations */

@@ -1,4 +1,17 @@
 document.addEventListener('DOMContentLoaded', function() {
+    // Get the hamburger menu button and the navigation menu
+    const menuButton = document.getElementById('menu');
+    const navMenu = document.querySelector('.nav-menu');
+
+    if (menuButton && navMenu) {
+        // Add click event listener to the hamburger menu button
+        menuButton.addEventListener('click', function() {
+            console.log("Hamburger menu clicked"); // For debugging purposes
+            navMenu.classList.toggle('open'); // Toggle 'open' class
+        });
+    }
+
+    // Gallery and YouTube Initialization
     const gallery = document.querySelector('.video-gallery');
     const prevBtn = document.querySelector('.prev-btn');
     const nextBtn = document.querySelector('.next-btn');
@@ -27,14 +40,14 @@ document.addEventListener('DOMContentLoaded', function() {
     function onPlayerStateChange(event) {
         if (event.data === YT.PlayerState.PLAYING) {
             const playingPlayer = event.target;
-            
+
             // Stop other videos if they're playing
             players.forEach(player => {
                 if (player !== playingPlayer) {
                     player.stopVideo();
                 }
             });
-            
+
             currentPlayer = playingPlayer;
         }
     }
@@ -45,7 +58,7 @@ document.addEventListener('DOMContentLoaded', function() {
         thumbnail.style.cursor = 'pointer';
         thumbnail.addEventListener('click', function() {
             const player = players[index];
-            
+
             if (currentPlayer === player) {
                 // Toggle play/pause for current video
                 if (player.getPlayerState() === YT.PlayerState.PLAYING) {
@@ -87,20 +100,25 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
-    // Add click listeners for navigation
-    nextBtn.addEventListener('click', () => scrollGallery(1));
-    prevBtn.addEventListener('click', () => scrollGallery(-1));
+    if (nextBtn && prevBtn) {
+        nextBtn.addEventListener('click', () => scrollGallery(1));
+        prevBtn.addEventListener('click', () => scrollGallery(-1));
+    }
 
     // Update button visibility
     function updateButtons() {
         const isAtStart = gallery.scrollLeft <= 0;
         const isAtEnd = gallery.scrollLeft >= gallery.scrollWidth - gallery.clientWidth;
-        
-        prevBtn.style.display = isAtStart ? 'none' : 'block';
-        nextBtn.style.display = isAtEnd ? 'none' : 'block';
+
+        if (prevBtn && nextBtn) {
+            prevBtn.style.display = isAtStart ? 'none' : 'block';
+            nextBtn.style.display = isAtEnd ? 'none' : 'block';
+        }
     }
 
-    gallery.addEventListener('scroll', updateButtons);
-    window.addEventListener('resize', updateButtons);
-    updateButtons(); // Initial state
+    if (gallery) {
+        gallery.addEventListener('scroll', updateButtons);
+        window.addEventListener('resize', updateButtons);
+        updateButtons(); =
+    }
 });

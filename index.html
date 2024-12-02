@@ -14,7 +14,7 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="style.css" />
-    <title>Document</title>
+    <title>Tech News</title>
   </head>
 
   <body>
@@ -22,7 +22,7 @@
     <header class="header">
       <div class="container">
         <nav class="top-nav">
-          <a href="/" class="logo">LOGO</a>
+          <a href="/" class="logo">FVE</a>
           <div class="hamburger-menu" id="menu">
             <span></span>
             <span></span>
@@ -30,7 +30,7 @@
           </div>
           <ul class="nav-menu">
             <li><a href="#">Home</a></li>
-            <li><a href="#">News</a></li>
+            <li><a href="#news">News</a></li>
             <li><a href="#footer">Contact</a></li>
           </ul>
         </nav>
@@ -47,7 +47,12 @@
           <!-- Featured News Begin -->
           <section class="featured-news">
             <div class="main-story">
-              <img src="https://placehold.co/800x400" alt="AI" />
+              <img
+                src="images/featured.webp"
+                alt="AI"
+                width="800"
+                height="400"
+              />
               <div class="story-overlay">
                 <h2>AI-Powered Coding Assistants Reach New Milestone</h2>
                 <p>20 hours ago | 3:44</p>
@@ -64,15 +69,26 @@
                   large-scale apps, while Svelte’s simplicity and speed are
                   attracting new adopters.
                 </p>
+                <p class="news-meta">
+                  <span class="author">Author: Foy</span> |
+                  <span class="published-date">Published: Feb 15, 2024</span> |
+                  <span class="category">Category: JavaScript</span> |
+                  <span class="tags">Tags: JavaScript, Frameworks, React</span>
+                </p>
               </div>
             </div>
           </section>
           <!-- Featured News End -->
 
           <!-- News Grid Begin -->
-          <section class="news-grid">
+          <section class="news-grid" id="news">
             <article class="news-card">
-              <img src="https://placehold.co/400x200" alt="CSS Modules" />
+              <img
+                src="images/dev1.jpeg"
+                alt="CSS Modules"
+                width="400"
+                height="200"
+              />
               <div class="news-content">
                 <h3 class="news-title">
                   CSS Modules Revolutionize Component Styling
@@ -82,11 +98,22 @@
                   styles for components. This technique eliminates style clashes
                   and improves maintainability in large-scale projects.
                 </p>
+                <p class="news-meta">
+                  <span class="author">Author: Eduardo Zuniga</span> |
+                  <span class="published-date">Published: Jan 1, 2024</span> |
+                  <span class="category">Category: Web Development</span> |
+                  <span class="tags">Tags: CSS, Modules, Styling</span>
+                </p>
               </div>
             </article>
 
             <article class="news-card">
-              <img src="https://placehold.co/400x200" alt="HTML 6" />
+              <img
+                src="images/developer.jpeg"
+                alt="HTML 6"
+                width="400"
+                height="200"
+              />
               <div class="news-content">
                 <h3 class="news-title">
                   HTML 6 Draft Proposal Promises Smarter Forms
@@ -96,11 +123,22 @@
                   for HTML 6. Developers are excited about features like
                   enhanced date pickers and built-in multi-step form support.
                 </p>
+                <p class="news-meta">
+                  <span class="author">Author: Vlad</span> |
+                  <span class="published-date">Published: Feb 15, 2024</span> |
+                  <span class="category">Category: HTML</span> |
+                  <span class="tags">Tags: Html, Froms, Frontend</span>
+                </p>
               </div>
             </article>
 
             <article class="news-card">
-              <img src="https://placehold.co/400x200" alt="C# Records" />
+              <img
+                src="images/csharprecords.jpeg"
+                alt="C# Records"
+                width="400"
+                height="200"
+              />
               <div class="news-content">
                 <h3 class="news-title">
                   C# Introduces Records for Immutable Objects
@@ -110,13 +148,21 @@
                   manipulation safer and more intuitive. This feature simplifies
                   working with immutable objects, reducing bugs in applications.
                 </p>
+                <p class="news-meta">
+                  <span class="author">Author: Saul Goodman</span> |
+                  <span class="published-date">Published: May 20, 2024</span> |
+                  <span class="category">Category: C# .Net</span> |
+                  <span class="tags">Tags: .Net, C#, Azure</span>
+                </p>
               </div>
             </article>
 
             <article class="news-card">
               <img
-                src="https://placehold.co/400x200"
+                src="images/aidebuggin.jpeg"
                 alt="AI-Powered Debugging"
+                width="400"
+                height="200"
               />
               <div class="news-content">
                 <h3 class="news-title">AI-Powered Debugging Tools Are Here</h3>
@@ -125,6 +171,61 @@
                   real-time. These tools analyze code behavior, suggest fixes,
                   and even rewrite problematic lines, revolutionizing debugging
                   processes.
+                </p>
+                <p class="news-meta">
+                  <span class="author">Author: Jesse Pinkman</span> |
+                  <span class="published-date">Published: Mar 10, 2024</span> |
+                  <span class="category">Category: AI</span> |
+                  <span class="tags">Tags: AI, Machine Learning, Coding</span>
+                </p>
+              </div>
+            </article>
+            <article class="news-card">
+              <img
+                src="images/a_monkey_coding.jpeg"
+                alt="JS Animation API"
+                width="400"
+                height="200"
+              />
+              <div class="news-content">
+                <h3 class="news-title">
+                  JavaScript’s New Native Animation API Simplifies Motion Design
+                </h3>
+                <p class="news-excerpt">
+                  The Web Animations API gains traction as developers move away
+                  from third-party libraries. It offers a lightweight and
+                  performant way to create animations directly in the browser.
+                </p>
+                <p class="news-meta">
+                  <span class="author">Author: Cesar</span> |
+                  <span class="published-date">Published: Mar 30, 2024</span> |
+                  <span class="category">Category: Java Script</span> |
+                  <span class="tags">Tags: JavaScript, Animation, Coding</span>
+                </p>
+              </div>
+            </article>
+
+            <article class="news-card">
+              <img
+                src="images/a_cute_dog_making_software_coding.jpeg"
+                alt="C# 12"
+                width="400"
+                height="200"
+              />
+              <div class="news-content">
+                <h3 class="news-title">
+                  C# 12 Introduces Default Interface Methods
+                </h3>
+                <p class="news-excerpt">
+                  C# developers gain flexibility with default implementations in
+                  interfaces. This update allows developers to extend APIs
+                  without breaking existing implementations.
+                </p>
+                <p class="news-meta">
+                  <span class="author">Author: Maradona</span> |
+                  <span class="published-date">Published: Jun 12, 2024</span> |
+                  <span class="category">Category: C#</span> |
+                  <span class="tags">Tags: .Net, C#, Azure</span>
                 </p>
               </div>
             </article>
@@ -182,7 +283,7 @@
         <!-- Advertisement Sidebar -->
         <aside class="advertisement-sidebar">
           <div class="advertisement">
-            <img src="https://placehold.co/400x800" alt="Ad Image" />
+            <img src="images/ad.jpeg" alt="Ad Image" width="150" height="200" />
             <p class="ad-description">
               Advertisement: Get 50% off all coding courses until the end of the
               month! Learn JavaScript, Python, and more. Exclusive Offer: Enroll

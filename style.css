@@ -148,7 +148,7 @@ img {
   width: 100%;
   height: 3px;
   background-color: var(--text-dark);
-  transition: transform var(--transition-base);
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
 /* Navigation Menu */
@@ -156,6 +156,7 @@ img {
   display: flex;
   gap: var(--spacing-md);
   list-style: none;
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 .nav-menu li {
   position: relative;
@@ -191,6 +192,13 @@ img {
     padding: var(--spacing-sm);
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transform: translateY(0);
+    opacity: 1;
+  }
+  .nav-menu.closed {
+    transform: translateY(-20px);
+    opacity: 0;
+    pointer-events: none;
   }
 }
 
